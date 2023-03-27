@@ -1,0 +1,342 @@
+{:perf {:latency-graph {:valid? true},
+        :rate-graph {:valid? true},
+        :valid? true},
+ :clock {:valid? true},
+ :stats {:valid? true,
+         :count 33161,
+         :ok-count 24,
+         :fail-count 4751,
+         :info-count 28386,
+         :by-f {:txn {:valid? true,
+                      :count 33161,
+                      :ok-count 24,
+                      :fail-count 4751,
+                      :info-count 28386}}},
+ :exceptions {:valid? true,
+              :exceptions ({:count 1105,
+                            :class com.mongodb.MongoCommandException,
+                            :example {:type :info,
+                                      :f :txn,
+                                      :value [[:append 9 114]
+                                              [:append 9 115]
+                                              [:append 9 116]
+                                              [:append 9 117]],
+                                      :time 79801027912,
+                                      :process 142,
+                                      :exception {:via [{:type com.mongodb.MongoCommandException,
+                                                         :message "Command failed with error 133 (FailedToSatisfyReadPreference): 'Could not find host matching read preference { mode: \"nearest\", hedge: { enabled: true } } for set rs_config' on server n8:27017. The full response is {\"ok\": 0.0, \"errmsg\": \"Could not find host matching read preference { mode: \\\"nearest\\\", hedge: { enabled: true } } for set rs_config\", \"code\": 133, \"codeName\": \"FailedToSatisfyReadPreference\", \"$clusterTime\": {\"clusterTime\": {\"$timestamp\": {\"t\": 1679872951, \"i\": 1}}, \"signature\": {\"hash\": {\"$binary\": {\"base64\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\", \"subType\": \"00\"}}, \"keyId\": 0}}, \"operationTime\": {\"$timestamp\": {\"t\": 1679872951, \"i\": 1}}}",
+                                                         :at [com.mongodb.internal.connection.ProtocolHelper
+                                                              getCommandFailureException
+                                                              "ProtocolHelper.java"
+                                                              198]}],
+                                                  :trace [[com.mongodb.internal.connection.ProtocolHelper
+                                                           getCommandFailureException
+                                                           "ProtocolHelper.java"
+                                                           198]
+                                                          [com.mongodb.internal.connection.InternalStreamConnection
+                                                           receiveCommandMessageResponse
+                                                           "InternalStreamConnection.java"
+                                                           413]
+                                                          [com.mongodb.internal.connection.InternalStreamConnection
+                                                           sendAndReceive
+                                                           "InternalStreamConnection.java"
+                                                           337]
+                                                          [com.mongodb.internal.connection.UsageTrackingInternalConnection
+                                                           sendAndReceive
+                                                           "UsageTrackingInternalConnection.java"
+                                                           116]
+                                                          [com.mongodb.internal.connection.DefaultConnectionPool$PooledConnection
+                                                           sendAndReceive
+                                                           "DefaultConnectionPool.java"
+                                                           644]
+                                                          [com.mongodb.internal.connection.CommandProtocolImpl
+                                                           execute
+                                                           "CommandProtocolImpl.java"
+                                                           71]
+                                                          [com.mongodb.internal.connection.DefaultServer$DefaultServerProtocolExecutor
+                                                           execute
+                                                           "DefaultServer.java"
+                                                           240]
+                                                          [com.mongodb.internal.connection.DefaultServerConnection
+                                                           executeProtocol
+                                                           "DefaultServerConnection.java"
+                                                           226]
+                                                          [com.mongodb.internal.connection.DefaultServerConnection
+                                                           command
+                                                           "DefaultServerConnection.java"
+                                                           126]
+                                                          [com.mongodb.internal.connection.DefaultServer$OperationCountTrackingConnection
+                                                           command
+                                                           "DefaultServer.java"
+                                                           354]
+                                                          [com.mongodb.internal.operation.MixedBulkWriteOperation
+                                                           executeCommand
+                                                           "MixedBulkWriteOperation.java"
+                                                           517]
+                                                          [com.mongodb.internal.operation.MixedBulkWriteOperation
+                                                           executeBulkWriteBatch
+                                                           "MixedBulkWriteOperation.java"
+                                                           379]
+                                                          [com.mongodb.internal.operation.MixedBulkWriteOperation
+                                                           lambda$execute$2
+                                                           "MixedBulkWriteOperation.java"
+                                                           300]
+                                                          [com.mongodb.internal.operation.OperationHelper
+                                                           lambda$withSourceAndConnection$2
+                                                           "OperationHelper.java"
+                                                           575]
+                                                          [com.mongodb.internal.operation.OperationHelper
+                                                           withSuppliedResource
+                                                           "OperationHelper.java"
+                                                           600]
+                                                          [com.mongodb.internal.operation.OperationHelper
+                                                           lambda$withSourceAndConnection$3
+                                                           "OperationHelper.java"
+                                                           574]
+                                                          [com.mongodb.internal.operation.OperationHelper
+                                                           withSuppliedResource
+                                                           "OperationHelper.java"
+                                                           600]
+                                                          [com.mongodb.internal.operation.OperationHelper
+                                                           withSourceAndConnection
+                                                           "OperationHelper.java"
+                                                           573]
+                                                          [com.mongodb.internal.operation.MixedBulkWriteOperation
+                                                           lambda$execute$3
+                                                           "MixedBulkWriteOperation.java"
+                                                           272]
+                                                          [com.mongodb.internal.async.function.RetryingSyncSupplier
+                                                           get
+                                                           "RetryingSyncSupplier.java"
+                                                           65]
+                                                          [com.mongodb.internal.operation.MixedBulkWriteOperation
+                                                           execute
+                                                           "MixedBulkWriteOperation.java"
+                                                           308]
+                                                          [com.mongodb.internal.operation.MixedBulkWriteOperation
+                                                           execute
+                                                           "MixedBulkWriteOperation.java"
+                                                           85]
+                                                          [com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor
+                                                           execute
+                                                           "MongoClientDelegate.java"
+                                                           212]
+                                                          [com.mongodb.client.internal.MongoCollectionImpl
+                                                           executeSingleWriteRequest
+                                                           "MongoCollectionImpl.java"
+                                                           1010]
+                                                          [com.mongodb.client.internal.MongoCollectionImpl
+                                                           executeUpdate
+                                                           "MongoCollectionImpl.java"
+                                                           994]
+                                                          [com.mongodb.client.internal.MongoCollectionImpl
+                                                           updateOne
+                                                           "MongoCollectionImpl.java"
+                                                           591]
+                                                          [jdk.internal.reflect.GeneratedMethodAccessor36
+                                                           invoke
+                                                           nil
+                                                           -1]
+                                                          [jdk.internal.reflect.DelegatingMethodAccessorImpl
+                                                           invoke
+                                                           "DelegatingMethodAccessorImpl.java"
+                                                           43]
+                                                          [java.lang.reflect.Method
+                                                           invoke
+                                                           "Method.java"
+                                                           566]
+                                                          [clojure.lang.Reflector
+                                                           invokeMatchingMethod
+                                                           "Reflector.java"
+                                                           167]
+                                                          [clojure.lang.Reflector
+                                                           invokeInstanceMethod
+                                                           "Reflector.java"
+                                                           102]
+                                                          [jepsen.mongodb.list_append$apply_mop_BANG_
+                                                           invokeStatic
+                                                           "list_append.clj"
+                                                           68]
+                                                          [jepsen.mongodb.list_append$apply_mop_BANG_
+                                                           invoke
+                                                           "list_append.clj"
+                                                           51]
+                                                          [clojure.core$partial$fn__5828
+                                                           invoke
+                                                           "core.clj"
+                                                           2638]
+                                                          [clojure.core$mapv$fn__8430
+                                                           invoke
+                                                           "core.clj"
+                                                           6912]
+                                                          [clojure.lang.PersistentVector
+                                                           reduce
+                                                           "PersistentVector.java"
+                                                           343]
+                                                          [clojure.core$reduce
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           6827]
+                                                          [clojure.core$mapv
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           6903]
+                                                          [clojure.core$mapv
+                                                           invoke
+                                                           "core.clj"
+                                                           6903]
+                                                          [jepsen.mongodb.list_append.Client$fn__2349$fn$reify__2351
+                                                           execute
+                                                           "list_append.clj"
+                                                           130]
+                                                          [com.mongodb.client.internal.ClientSessionImpl
+                                                           withTransaction
+                                                           "ClientSessionImpl.java"
+                                                           211]
+                                                          [jdk.internal.reflect.GeneratedMethodAccessor40
+                                                           invoke
+                                                           nil
+                                                           -1]
+                                                          [jdk.internal.reflect.DelegatingMethodAccessorImpl
+                                                           invoke
+                                                           "DelegatingMethodAccessorImpl.java"
+                                                           43]
+                                                          [java.lang.reflect.Method
+                                                           invoke
+                                                           "Method.java"
+                                                           566]
+                                                          [clojure.lang.Reflector
+                                                           invokeMatchingMethod
+                                                           "Reflector.java"
+                                                           167]
+                                                          [clojure.lang.Reflector
+                                                           invokeInstanceMethod
+                                                           "Reflector.java"
+                                                           102]
+                                                          [jepsen.mongodb.list_append.Client$fn__2349$fn__2350
+                                                           invoke
+                                                           "list_append.clj"
+                                                           133]
+                                                          [jepsen.mongodb.list_append.Client$fn__2349
+                                                           invoke
+                                                           "list_append.clj"
+                                                           126]
+                                                          [clojure.core$binding_conveyor_fn$fn__5739
+                                                           invoke
+                                                           "core.clj"
+                                                           2030]
+                                                          [clojure.lang.AFn
+                                                           call
+                                                           "AFn.java"
+                                                           18]
+                                                          [java.util.concurrent.FutureTask
+                                                           run
+                                                           "FutureTask.java"
+                                                           264]
+                                                          [java.util.concurrent.ThreadPoolExecutor
+                                                           runWorker
+                                                           "ThreadPoolExecutor.java"
+                                                           1128]
+                                                          [java.util.concurrent.ThreadPoolExecutor$Worker
+                                                           run
+                                                           "ThreadPoolExecutor.java"
+                                                           628]
+                                                          [java.lang.Thread
+                                                           run
+                                                           "Thread.java"
+                                                           829]],
+                                                  :cause "Command failed with error 133 (FailedToSatisfyReadPreference): 'Could not find host matching read preference { mode: \"nearest\", hedge: { enabled: true } } for set rs_config' on server n8:27017. The full response is {\"ok\": 0.0, \"errmsg\": \"Could not find host matching read preference { mode: \\\"nearest\\\", hedge: { enabled: true } } for set rs_config\", \"code\": 133, \"codeName\": \"FailedToSatisfyReadPreference\", \"$clusterTime\": {\"clusterTime\": {\"$timestamp\": {\"t\": 1679872951, \"i\": 1}}, \"signature\": {\"hash\": {\"$binary\": {\"base64\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\", \"subType\": \"00\"}}, \"keyId\": 0}}, \"operationTime\": {\"$timestamp\": {\"t\": 1679872951, \"i\": 1}}}"},
+                                      :error "indeterminate: Command failed with error 133 (FailedToSatisfyReadPreference): 'Could not find host matching read preference { mode: \"nearest\", hedge: { enabled: true } } for set rs_config' on server n8:27017. The full response is {\"ok\": 0.0, \"errmsg\": \"Could not find host matching read preference { mode: \\\"nearest\\\", hedge: { enabled: true } } for set rs_config\", \"code\": 133, \"codeName\": \"FailedToSatisfyReadPreference\", \"$clusterTime\": {\"clusterTime\": {\"$timestamp\": {\"t\": 1679872951, \"i\": 1}}, \"signature\": {\"hash\": {\"$binary\": {\"base64\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAA=\", \"subType\": \"00\"}}, \"keyId\": 0}}, \"operationTime\": {\"$timestamp\": {\"t\": 1679872951, \"i\": 1}}}",
+                                      :index 387}})},
+ :workload {:valid? false,
+            :anomaly-types (:G-single),
+            :anomalies {:G-single [{:cycle [{:type :ok,
+                                             :f :txn,
+                                             :value [[:r
+                                                      9
+                                                      [1
+                                                       4
+                                                       5
+                                                       6
+                                                       7
+                                                       8
+                                                       9
+                                                       10
+                                                       13]]
+                                                     [:append 8 3]
+                                                     [:r
+                                                      9
+                                                      [1
+                                                       4
+                                                       5
+                                                       6
+                                                       7
+                                                       8
+                                                       9
+                                                       10
+                                                       13]]
+                                                     [:append 7 2]],
+                                             :time 4649329674,
+                                             :process 1,
+                                             :index 45}
+                                            {:type :ok,
+                                             :f :txn,
+                                             :value [[:r 8 [4 5 7 6]]
+                                                     [:append 9 14]
+                                                     [:append 8 9]],
+                                             :time 4399691833,
+                                             :process 8,
+                                             :index 39}
+                                            {:type :ok,
+                                             :f :txn,
+                                             :value [[:r
+                                                      9
+                                                      [1
+                                                       4
+                                                       5
+                                                       6
+                                                       7
+                                                       8
+                                                       9
+                                                       10
+                                                       13]]
+                                                     [:append 8 3]
+                                                     [:r
+                                                      9
+                                                      [1
+                                                       4
+                                                       5
+                                                       6
+                                                       7
+                                                       8
+                                                       9
+                                                       10
+                                                       13]]
+                                                     [:append 7 2]],
+                                             :time 4649329674,
+                                             :process 1,
+                                             :index 45}],
+                                    :steps ({:type :rw,
+                                             :key 9,
+                                             :value 13,
+                                             :value' 14,
+                                             :a-mop-index 0,
+                                             :b-mop-index 1}
+                                            {:type :ww,
+                                             :key 8,
+                                             :value 9,
+                                             :value' 3,
+                                             :a-mop-index 2,
+                                             :b-mop-index 1}),
+                                    :type :G-single}]},
+            :not #{:consistent-view :repeatable-read},
+            :also-not #{:forward-consistent-view
+                        :serializable
+                        :snapshot-isolation
+                        :strong-serializable
+                        :strong-session-serializable
+                        :strong-session-snapshot-isolation
+                        :strong-snapshot-isolation
+                        :update-serializable}},
+ :crash {:valid? true, :count 0, :matches ()},
+ :valid? false}
